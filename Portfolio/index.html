@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pradyum Meshram — Software Engineer & Full Stack Developer passionate about building modern, scalable web applications." />
+  <meta name="theme-color" content="#09090B" />
+  <title>Pradyum Meshram — Software Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CURSOR GLOW
+  ============================================================ -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       CANVAS: Stars + Particles
+  ============================================================ -->
+  <canvas id="starCanvas" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Pradyum Meshram — home">
+        <span class="logo-bracket">&lt;</span>PM<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta" aria-label="Contact Pradyum">Contact</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" class="hero" aria-label="Hero">
+
+    <!-- Blobs -->
+    <div class="blob blob-purple" aria-hidden="true"></div>
+    <div class="blob blob-pink" aria-hidden="true"></div>
+    <div class="blob blob-orange" aria-hidden="true"></div>
+
+    <!-- Floating code snippets -->
+    <div class="floating-code fc-1" aria-hidden="true"><span class="code-kw">const</span> dev = <span class="code-str">'Pradyum'</span>;</div>
+    <div class="floating-code fc-2" aria-hidden="true"><span class="code-kw">await</span> build(future);</div>
+    <div class="floating-code fc-3" aria-hidden="true">{ <span class="code-kw">passion</span>: <span class="code-str">true</span> }</div>
+    <div class="floating-code fc-4" aria-hidden="true"><span class="code-kw">npm</span> run ship 🚀</div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+
+      <h1 class="hero-heading reveal-up">
+        <span class="hero-hi">Hi, I'm</span>
+        <span class="hero-name gradient-text">Pradyum Meshram</span>
+      </h1>
+
+      <div class="hero-typing reveal-up" aria-live="polite">
+        <span class="typing-prefix">I'm a&nbsp;</span>
+        <span class="typing-text" id="typingText"></span>
+        <span class="typing-cursor" aria-hidden="true">|</span>
+      </div>
+
+      <p class="hero-desc reveal-up">
+        A Computer Engineering student passionate about building modern, scalable web applications and solving real-world problems through technology.
+      </p>
+
+      <div class="hero-actions reveal-up">
+        <a href="#projects" class="btn btn-primary">
+          <span>Explore My Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="pradyum-resume.pdf" class="btn btn-ghost" download aria-label="Download resume PDF">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2v8M5 7l3 3 3-3M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+
+      <div class="hero-socials reveal-up">
+        <a href="https://github.com/Pradyum-02" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/pradyum-meshram-7b4305321?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/pradyum.one_three?igsh=MXF3a3c2OGluOWp0NA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:pradyum@example.com" class="social-link" aria-label="Send email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about" class="about" aria-label="About Pradyum">
+    <div class="container">
+      <div class="section-eyebrow reveal-up">About Me</div>
+      <h2 class="section-title reveal-up">Crafting code,<br/><span class="gradient-text">one commit at a time.</span></h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal-up">
+          <p>I'm <strong>Pradyum Meshram</strong>, a Computer Engineering student with a strong passion for full-stack web development. I enjoy the entire journey of an idea — from architecture and design, through clean, maintainable code, to a polished user experience that just works.</p>
+          <p>I gravitate towards building tools people actually use. Whether that's a campus management system, a weather app, or a client's business website — I care deeply about the details.</p>
+          <p>Outside of code, I'm grinding LeetCode, exploring system design concepts, and keeping up with the rapidly changing world of backend architecture.</p>
+        </div>
+
+        <div class="about-cards reveal-up">
+          <div class="about-stat-card glass-card">
+            <div class="stat-icon">🎓</div>
+            <div class="stat-body">
+              <div class="stat-label">Education</div>
+              <div class="stat-value">B.E. Computer Engineering</div>
+              <div class="stat-sub">Modern Education Society's Wadia College of Engineering</div>
+            </div>
+          </div>
+          <div class="about-stat-card glass-card">
+            <div class="stat-icon">📍</div>
+            <div class="stat-body">
+              <div class="stat-label">Location</div>
+              <div class="stat-value">Pune, Maharashtra, India</div>
+              <div class="stat-sub">Open for work.</div>
+            </div>
+          </div>
+          <div class="about-stat-card glass-card">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-body">
+              <div class="stat-label">Career Goal</div>
+              <div class="stat-value">Full Stack Engineer</div>
+              <div class="stat-sub">At a product-focused company</div>
+            </div>
+          </div>
+          <div class="about-stat-card glass-card">
+            <div class="stat-icon">💡</div>
+            <div class="stat-body">
+              <div class="stat-label">Stats</div>
+              <div class="stat-value">4+ Projects Built</div>
+              <div class="stat-sub">100+ LeetCode problems solved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+  <section id="skills" class="skills" aria-label="Skills">
+    <div class="container">
+      <div class="section-eyebrow reveal-up">What I Work With</div>
+      <h2 class="section-title reveal-up">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="skill-group glass-card reveal-up">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">⌨️</span>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill" style="--glow: #f7df1e">JavaScript</span>
+            <span class="skill-pill" style="--glow: #3572A5">Python</span>
+            <span class="skill-pill" style="--glow: #b07219">Java</span>
+            <span class="skill-pill" style="--glow: #a97bff">C++</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-group glass-card reveal-up">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">🎨</span>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill" style="--glow: #e34c26">HTML5</span>
+            <span class="skill-pill" style="--glow: #264de4">CSS3</span>
+            <span class="skill-pill" style="--glow: #61dafb">React</span>
+            <span class="skill-pill" style="--glow: #7C5CFF">Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-group glass-card reveal-up">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">⚙️</span>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill" style="--glow: #68a063">Node.js</span>
+            <span class="skill-pill" style="--glow: #000000">Express.js</span>
+            <span class="skill-pill" style="--glow: #ff6b35">REST APIs</span>
+            <span class="skill-pill" style="--glow: #7C5CFF">JWT Auth</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-group glass-card reveal-up">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">🗄️</span>
+            <h3>Database</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill" style="--glow: #47a248">MongoDB</span>
+            <span class="skill-pill" style="--glow: #00758f">MySQL</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-group glass-card reveal-up">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">🛠️</span>
+            <h3>Tools</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill" style="--glow: #f05032">Git</span>
+            <span class="skill-pill" style="--glow: #2088ff">GitHub Actions</span>
+            <span class="skill-pill" style="--glow: #000000">Vercel</span>
+            <span class="skill-pill" style="--glow: #46E2A3">Render</span>
+            <span class="skill-pill" style="--glow: #ff6c37">Postman</span>
+            <span class="skill-pill" style="--glow: #007acc">VS Code</span>
+          </div>
+        </div>
+
+        <!-- Currently Learning -->
+        <div class="skill-group glass-card reveal-up skill-group-learning">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">📚</span>
+            <h3>Currently Learning</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill learning-pill" style="--glow: #A855F7">Advanced React</span>
+            <span class="skill-pill learning-pill" style="--glow: #7C5CFF">System Design</span>
+            <span class="skill-pill learning-pill" style="--glow: #FF8A4C">DSA</span>
+            <span class="skill-pill learning-pill" style="--glow: #FF6EA9">Microservices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section id="projects" class="projects" aria-label="Projects">
+    <div class="container">
+      <div class="section-eyebrow reveal-up">What I've Built</div>
+      <h2 class="section-title reveal-up">Selected <span class="gradient-text">Projects</span></h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card glass-card reveal-up" tabindex="0" role="button" aria-label="View College OS project details" onclick="openModal('college-os')" onkeydown="if(event.key==='Enter')openModal('college-os')">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <img src="CollegeOS.png" alt="College OS project preview" />
+            </div>
+            <div class="project-tag">Full Stack</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">College OS (Currently Working)</h3>
+            <p class="project-desc">Campus management platform with multi-role dashboards for students, faculty, and admins.</p>
+            <div class="project-stack">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="College OS live demo" onclick="event.stopPropagation()">Live Demo ↗</a>
+              <a href="https://github.com/Pradyum-02" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="College OS GitHub" onclick="event.stopPropagation()">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-card reveal-up" tabindex="0" role="button" aria-label="View Employee Leave Management project details" onclick="openModal('leave-mgmt')" onkeydown="if(event.key==='Enter')openModal('leave-mgmt')">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <img src="Employee-Management-system.png" alt="Employee Management project preview" />
+            </div>
+            <div class="project-tag">Full Stack</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Employee Leave Management</h3>
+            <p class="project-desc">HR system for managing employee leave requests, approvals, and attendance tracking.</p>
+            <div class="project-stack">
+              <span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Leave Management live demo" onclick="event.stopPropagation()">Live Demo ↗</a>
+              <a href="https://github.com/Pradyum-02" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Leave Management GitHub" onclick="event.stopPropagation()">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass-card reveal-up" tabindex="0" role="button" aria-label="View Portfolio Website project details" onclick="openModal('portfolio')" onkeydown="if(event.key==='Enter')openModal('portfolio')">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <img src="Portfolio.png" alt="Portfolio project preview" />
+            </div>
+            <div class="project-tag">Frontend</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-desc">This very site — a premium dark-mode portfolio built with pure HTML, CSS, and JavaScript. No frameworks.</p>
+            <div class="project-stack">
+              <span>HTML5</span><span>CSS3</span><span>Vanilla JS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://portfolio-pradyum.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Portfolio live demo" onclick="event.stopPropagation()">Live Demo ↗</a>
+              <a href="https://github.com/Pradyum-02" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Portfolio GitHub" onclick="event.stopPropagation()">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card glass-card reveal-up" tabindex="0" role="button" aria-label="View Weather Application project details" onclick="openModal('weather')" onkeydown="if(event.key==='Enter')openModal('weather')">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <span class="project-emoji">🌦️</span>
+            </div>
+            <div class="project-tag">API</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Weather Application</h3>
+            <p class="project-desc">Real-time weather app with location-based forecasts, animated weather states, and clean UI.</p>
+            <div class="project-stack">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>OpenWeather API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://weather-app-pradyum.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Weather App live demo" onclick="event.stopPropagation()">Live Demo ↗</a>
+              <a href="https://github.com/Pradyum-02/weather-app" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Weather App GitHub" onclick="event.stopPropagation()">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CURRENTLY LEARNING
+  ============================================================ -->
+  <section id="learning" class="learning" aria-label="Currently learning">
+    <div class="container">
+      <div class="section-eyebrow reveal-up">Always Growing</div>
+      <h2 class="section-title reveal-up">Currently <span class="gradient-text">Learning</span></h2>
+
+      <div class="learning-grid">
+        <div class="learning-card glass-card reveal-up">
+          <div class="learning-icon">⚛️</div>
+          <h3>Advanced React</h3>
+          <p>Hooks, performance patterns, concurrent features, and state management at scale.</p>
+          <div class="learning-progress">
+            <div class="progress-bar" style="--progress: 75%"></div>
+          </div>
+        </div>
+        <div class="learning-card glass-card reveal-up">
+          <div class="learning-icon">🔐</div>
+          <h3>JWT Authentication</h3>
+          <p>Secure auth flows, refresh tokens, role-based access control, and session management.</p>
+          <div class="learning-progress">
+            <div class="progress-bar" style="--progress: 60%"></div>
+          </div>
+        </div>
+        <div class="learning-card glass-card reveal-up">
+          <div class="learning-icon">🏗️</div>
+          <h3>System Design</h3>
+          <p>Scalable architectures, load balancing, caching strategies, and distributed systems.</p>
+          <div class="learning-progress">
+            <div class="progress-bar" style="--progress: 40%"></div>
+          </div>
+        </div>
+        <div class="learning-card glass-card reveal-up">
+          <div class="learning-icon">🗃️</div>
+          <h3>Database Optimization</h3>
+          <p>Indexing strategies, query optimization, sharding, and database design patterns.</p>
+          <div class="learning-progress">
+            <div class="progress-bar" style="--progress: 50%"></div>
+          </div>
+        </div>
+        <div class="learning-card glass-card reveal-up">
+          <div class="learning-icon">🧩</div>
+          <h3>DSA</h3>
+          <p>Advanced algorithms, dynamic programming, graphs, trees, and competitive problem-solving.</p>
+          <div class="learning-progress">
+            <div class="progress-bar" style="--progress: 65%"></div>
+          </div>
+        </div>
+        <div class="learning-card glass-card reveal-up">
+          <div class="learning-icon">🔧</div>
+          <h3>Backend Architecture</h3>
+          <p>Microservices, event-driven systems, message queues, and clean architecture patterns.</p>
+          <div class="learning-progress">
+            <div class="progress-bar" style="--progress: 35%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact" class="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-bg-blob" aria-hidden="true"></div>
+        <div class="section-eyebrow reveal-up">Get In Touch</div>
+        <h2 class="contact-title reveal-up"><span class="gradient-text">Get in Touch.</span></h2>
+        <p class="contact-sub reveal-up">I'm always open to meaningful projects, exciting collaborations, and the right full-time opportunity.</p>
+
+        <div class="contact-actions reveal-up">
+          <a href="mailto:pradyum@example.com" class="btn btn-primary contact-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send an Email
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost contact-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            Connect on LinkedIn
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost contact-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View GitHub
+          </a>
+          <a href="#" class="btn btn-ghost contact-btn" download aria-label="Download resume PDF">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <a href="#hero" class="nav-logo footer-logo" aria-label="Back to top">
+            <span class="logo-bracket">&lt;</span>PM<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p class="footer-copy">© 2026 Pradyum Meshram. Crafted with ❤️ and too much coffee.</p>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-socials">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:pradyum@example.com" class="social-link" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+          <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Top
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       PROJECT MODALS
+  ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Project details" tabindex="-1">
+    <div class="modal-container" id="modalContainer">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
